@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FF6600" />
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Sistema de Atendimento ao Cliente UOL - Suporte técnico, cobrança e informações de serviços" />
+    <meta name="keywords" content="UOL, SAC, atendimento, suporte, internet, tecnologia" />
+    <meta name="author" content="UOL" />
+    
+    <!-- Favicon (adicione seu favicon.ico na pasta public/) -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:title" content="UOL SAC - Atendimento Online" />
+    <meta property="og:description" content="Central de atendimento ao cliente UOL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sac.uol.com.br" />
+    <!-- Adicione uma imagem og:image posteriormente -->
+    
+    <title>SAC UOL - Atendimento ao Cliente</title>
+    
+    <!-- Pré-conexão para melhor performance -->
+    <link rel="preconnect" href="https://api.sac.uol.com.br" />
+  </head>
+  <body>
+    <noscript>
+      <div class="noscript-warning">
+        <h1>JavaScript Necessário</h1>
+        <p>Nosso sistema de atendimento requer JavaScript para funcionar corretamente.</p>
+        <p>Por favor, ative o JavaScript no seu navegador ou <a href="https://suporte.uol.com.br">acesse nossa central de ajuda</a>.</p>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <!-- Mensagem para navegadores antigos (opcional) -->
+    <script>
+      if (!window.Promise || !window.fetch || !window.Symbol) {
+        document.write(
+          '<div style="padding: 1rem; background: #ffebee; color: #c62828;">' +
+          'Seu navegador está desatualizado. Por favor <a href="https://www.microsoft.com/pt-br/edge" style="color: #d32f2f;">atualize-o</a> para melhor experiência.' +
+          '</div>'
+        );
+      }
+    </script>
+  </body>
+</html>
