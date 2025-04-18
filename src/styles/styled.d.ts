@@ -9,6 +9,8 @@ declare module 'styled-components' {
       text: string;
       white: string;
       black: string;
+      uolBlack: string;
+      uolYellow: string;
       gray: {
         light: string;
         medium: string;

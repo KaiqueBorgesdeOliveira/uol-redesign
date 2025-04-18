@@ -1,50 +1,61 @@
 import React from 'react';
-import styled from 'styled-components';
-import { UOLLogo } from '../../common/UOLLogo';
+import { FiSearch, FiHelpCircle } from 'react-icons/fi';
+import * as S from './Header.styles';
 
-const HeaderContainer = styled.header`
-  background: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
-`;
-
-const HeaderContent = styled.div`
-  max-width: ${({ theme }) => theme.breakpoints.desktop};
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Navigation = styled.nav`
-  display: flex;
-  gap: 2rem;
-`;
-
-const NavLink = styled.a`
-  color: ${({ theme }) => theme.colors.text};
-  text-decoration: none;
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 1rem;
-  
-  &:hover {
-    color: ${({ theme }) => theme.colors.secondary};
-  }
-`;
-
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
-    <HeaderContainer>
-      <HeaderContent>
-        <UOLLogo />
-        <Navigation>
-          <NavLink href="#home">Home</NavLink>
-          <NavLink href="#atendimento">Atendimento</NavLink>
-          <NavLink href="#financeiro">Financeiro</NavLink>
-          <NavLink href="#minha-conta">Minha conta</NavLink>
-        </Navigation>
-      </HeaderContent>
-    </HeaderContainer>
+    <S.HeaderContainer>
+      <S.TopBar>
+        <S.Logo src="/uol-logo.svg" alt="UOL" />
+        
+        <S.TopBarNav>
+          <S.TopBarLink href="https://ingresso.com">INGRESSO.COM</S.TopBarLink>
+          <S.TopBarLink href="https://uolhost.com.br">UOL HOST</S.TopBarLink>
+          <S.TopBarLink href="https://pagbank.com.br">PAGBANK</S.TopBarLink>
+          <S.TopBarLink href="https://cursos.uol.com.br">CURSOS</S.TopBarLink>
+          <S.TopBarLink href="https://uolplay.com.br">UOL PLAY</S.TopBarLink>
+          <S.TopBarLink href="https://uolads.com.br">UOL ADS</S.TopBarLink>
+        </S.TopBarNav>
+
+        <S.ButtonsContainer>
+          <S.IconButton aria-label="Buscar" isTopBar>
+            <FiSearch />
+            <S.IconLabel>BUSCA</S.IconLabel>
+          </S.IconButton>
+          
+          <S.IconButton aria-label="Bate-papo" isTopBar>
+            <img src="/chat-icon.svg" alt="" />
+            <S.IconLabel>BATE-PAPO</S.IconLabel>
+          </S.IconButton>
+          
+          <S.IconButton aria-label="Email" isTopBar>
+            <img src="/email-icon.svg" alt="" />
+            <S.IconLabel>EMAIL</S.IconLabel>
+          </S.IconButton>
+        </S.ButtonsContainer>
+      </S.TopBar>
+
+      <S.MainHeader>
+        <S.LogoSAC src="/sac-logo.svg" alt="SAC UOL" />
+        
+        <S.MainNav>
+          <S.MainNavLink href="/home">Home</S.MainNavLink>
+          <S.MainNavLink href="/atendimento">Atendimento</S.MainNavLink>
+          <S.MainNavLink href="/financeiro">Financeiro</S.MainNavLink>
+          <S.MainNavLink href="/minha-conta">Minha conta</S.MainNavLink>
+        </S.MainNav>
+
+        <S.RightNav>
+          <S.NavButton>
+            <FiHelpCircle />
+            Ajuda
+          </S.NavButton>
+          <S.NavButton>
+            Entrar
+          </S.NavButton>
+        </S.RightNav>
+      </S.MainHeader>
+    </S.HeaderContainer>
   );
 };
 

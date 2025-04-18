@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../sections/Header/Header';
 import { HelpSection } from '../sections/HelpSection/HelpSection';
 import ServicesGrid from '../sections/ServicesGrid/ServiceGrid';
+import Footer from '../common/Footer';
 import * as S from './App.styles';
 import styled from 'styled-components';
 
@@ -18,20 +19,30 @@ const MainContainer = styled.main`
 
 const services = [
   {
-    icon: '💳',
+    icon: 'extrato',
     title: 'Meu extrato',
-    description: 'Visualize seu histórico de pagamentos',
+    description: 'Visualize todo seu histórico de pagamentos e transações de forma detalhada',
   },
   {
-    icon: '🔄',
+    icon: 'boleto',
     title: '2ª via de boleto',
-    description: 'Gere a segunda via do seu boleto',
+    description: 'Gere e baixe a segunda via dos seus boletos em poucos cliques',
   },
   {
-    icon: '🔒',
+    icon: 'senha',
     title: 'Recuperação de senha',
-    description: 'Recupere sua senha de acesso',
+    description: 'Recupere seu acesso de forma rápida e segura',
   },
+  {
+    icon: 'produtos',
+    title: 'Meus produtos',
+    description: 'Gerencie todos os seus produtos e serviços UOL em um só lugar',
+  },
+  {
+    icon: 'pagamento',
+    title: 'Meios de pagamento',
+    description: 'Configure suas formas de pagamento preferidas',
+  }
 ];
 
 const App: React.FC = () => {
@@ -42,6 +53,7 @@ const App: React.FC = () => {
         <ServicesGrid services={services} />
         <HelpSection />
       </MainContainer>
+      <Footer />
     </>
   );
 };

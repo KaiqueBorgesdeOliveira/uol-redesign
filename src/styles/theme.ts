@@ -8,6 +8,8 @@ export const theme: DefaultTheme = {
     text: '#333333',
     white: '#FFFFFF',
     black: '#000000',
+    uolBlack: '#1A1A1A',
+    uolYellow: '#FFC800',
     gray: {
       light: '#E5E5E5',
       medium: '#999999',

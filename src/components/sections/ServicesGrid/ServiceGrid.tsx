@@ -1,53 +1,11 @@
 // src/components/sections/ServicesGrid.tsx
 import React from 'react';
-import styled from 'styled-components';
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-`;
-
-const ServiceCard = styled.div`
-  background: ${({ theme }) => theme.colors.white};
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-`;
-
-const IconWrapper = styled.div`
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${({ theme }) => theme.colors.primary};
-  border-radius: 50%;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 1.5rem;
-`;
-
-const Title = styled.h3`
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 1.125rem;
-  color: ${({ theme }) => theme.colors.text};
-  margin: 0 0 0.5rem;
-`;
-
-const Description = styled.p`
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 0.875rem;
-  color: ${({ theme }) => theme.colors.gray.dark};
-  margin: 0;
-`;
+import * as S from './ServiceGrid.styles';
+import IconExtrato from '../../../assets/images/Icone-extrato-60x60px.svg';
+import IconBoleto from '../../../assets/images/Icone-boleto-60x60px.svg';
+import IconSenha from '../../../assets/images/Icone Alterar senha.svg';
+import IconProdutos from '../../../assets/images/Icone-meus-produtos-60x60px.svg';
+import IconPagamento from '../../../assets/images/Icone-meios-de-pagamento-60x60px.svg';
 
 interface Service {
   icon: string;
@@ -59,19 +17,30 @@ interface ServicesGridProps {
   services: Service[];
 }
 
+const serviceIcons: { [key: string]: string } = {
+  'Meu extrato': IconExtrato,
+  '2ª via de boleto': IconBoleto,
+  'Recuperação de senha': IconSenha,
+  'Meus produtos': IconProdutos,
+  'Meios de pagamento': IconPagamento,
+};
+
 const ServicesGrid: React.FC<ServicesGridProps> = ({ services }) => {
   return (
-    <Grid>
+    <S.Grid>
       {services.map((service, index) => (
-        <ServiceCard key={index}>
-          <IconWrapper>
-            <span>{service.icon}</span>
-          </IconWrapper>
-          <Title>{service.title}</Title>
-          <Description>{service.description}</Description>
-        </ServiceCard>
+        <S.ServiceCard key={index}>
+          <S.IconWrapper>
+            <img 
+              src={serviceIcons[service.title] || serviceIcons['Meus produtos']} 
+              alt={service.title}
+            />
+          </S.IconWrapper>
+          <S.Title>{service.title}</S.Title>
+          <S.Description>{service.description}</S.Description>
+        </S.ServiceCard>
       ))}
-    </Grid>
+    </S.Grid>
   );
 };
 
