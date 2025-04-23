@@ -1,62 +1,63 @@
 import React from 'react';
-import { FiSearch, FiHelpCircle } from 'react-icons/fi';
 import * as S from './Header.styles';
+import { ReactComponent as LogoUOL } from '../../../assets/images/logo-uol.svg';
+import { ReactComponent as IconSearch } from '../../../assets/images/Icone search.svg';
+import { ReactComponent as IconMenu } from '../../../assets/images/Icon dropdown menu.svg';
+import { ReactComponent as IconEmail } from '../../../assets/images/Icone atendimento.svg';
+import { ReactComponent as IconProfile } from '../../../assets/images/Icone perfil.svg';
 
 export const Header: React.FC = () => {
   return (
-    <S.HeaderContainer>
+    <S.HeaderContainer role="banner">
       <S.TopBar>
-        <S.Logo src="/uol-logo.svg" alt="UOL" />
-        
-        <S.TopBarNav>
-          <S.TopBarLink href="https://ingresso.com">INGRESSO.COM</S.TopBarLink>
-          <S.TopBarLink href="https://uolhost.com.br">UOL HOST</S.TopBarLink>
-          <S.TopBarLink href="https://pagbank.com.br">PAGBANK</S.TopBarLink>
-          <S.TopBarLink href="https://cursos.uol.com.br">CURSOS</S.TopBarLink>
-          <S.TopBarLink href="https://uolplay.com.br">UOL PLAY</S.TopBarLink>
-          <S.TopBarLink href="https://uolads.com.br">UOL ADS</S.TopBarLink>
+        <S.TopBarNav aria-label="Links rápidos">
+          <S.TopBarLink href="https://www.ingresso.com/" target="_blank" rel="noopener noreferrer">INGRESSO.COM</S.TopBarLink>
+          <S.TopBarLink href="https://uolhost.uol.com.br/" target="_blank" rel="noopener noreferrer">UOL HOST</S.TopBarLink>
+          <S.TopBarLink href="https://www.pagbank.com.br/" target="_blank" rel="noopener noreferrer">PAGBANK</S.TopBarLink>
+          <S.TopBarLink href="https://www.cursoslivres.com.br/" target="_blank" rel="noopener noreferrer">CURSOS</S.TopBarLink>
+          <S.TopBarLink href="https://www.uolplay.com.br/" target="_blank" rel="noopener noreferrer">UOL PLAY</S.TopBarLink>
+          <S.TopBarLink href="https://www.uolads.com.br/" target="_blank" rel="noopener noreferrer">UOL ADS</S.TopBarLink>
         </S.TopBarNav>
 
-        <S.ButtonsContainer>
-          <S.IconButton aria-label="Buscar" isTopBar>
-            <FiSearch />
-            <S.IconLabel>BUSCA</S.IconLabel>
+        <S.TopBarActions>
+          <S.IconButton aria-label="Buscar no site" isTopBar>
+            <IconSearch />
+            <span>BUSCA</span>
           </S.IconButton>
-          
-          <S.IconButton aria-label="Bate-papo" isTopBar>
-            <img src="/chat-icon.svg" alt="" />
-            <S.IconLabel>BATE-PAPO</S.IconLabel>
+          <S.IconButton aria-label="Acessar bate-papo" isTopBar>
+            <IconEmail />
+            <span>BATE-PAPO</span>
           </S.IconButton>
-          
-          <S.IconButton aria-label="Email" isTopBar>
-            <img src="/email-icon.svg" alt="" />
-            <S.IconLabel>EMAIL</S.IconLabel>
+          <S.IconButton aria-label="Acessar email" isTopBar>
+            <IconProfile />
+            <span>EMAIL</span>
           </S.IconButton>
-        </S.ButtonsContainer>
+        </S.TopBarActions>
       </S.TopBar>
 
       <S.MainHeader>
-        <S.LogoSAC src="/sac-logo.svg" alt="SAC UOL" />
-        
-        <S.MainNav>
-          <S.MainNavLink href="/home">Home</S.MainNavLink>
-          <S.MainNavLink href="/atendimento">Atendimento</S.MainNavLink>
-          <S.MainNavLink href="/financeiro">Financeiro</S.MainNavLink>
-          <S.MainNavLink href="/minha-conta">Minha conta</S.MainNavLink>
+        <S.Logo href="/">
+          <LogoUOL title="UOL - O melhor conteúdo" />
+        </S.Logo>
+
+        <S.MainNav aria-label="Menu principal">
+          <S.MainNavLink href="#" aria-current="page">Notícias</S.MainNavLink>
+          <S.MainNavLink href="#">Economia</S.MainNavLink>
+          <S.MainNavLink href="#">Esporte</S.MainNavLink>
+          <S.MainNavLink href="#">Entretenimento</S.MainNavLink>
+          <S.MainNavLink href="#">Universa</S.MainNavLink>
+          <S.MainNavLink href="#">Folha</S.MainNavLink>
         </S.MainNav>
 
-        <S.RightNav>
-          <S.NavButton>
-            <FiHelpCircle />
-            Ajuda
-          </S.NavButton>
-          <S.NavButton>
-            Entrar
-          </S.NavButton>
-        </S.RightNav>
+        <S.ButtonsContainer>
+          <S.IconButton aria-label="Buscar no site">
+            <IconSearch />
+          </S.IconButton>
+          <S.IconButton aria-label="Abrir menu">
+            <IconMenu />
+          </S.IconButton>
+        </S.ButtonsContainer>
       </S.MainHeader>
     </S.HeaderContainer>
   );
 };
-
-export default Header;

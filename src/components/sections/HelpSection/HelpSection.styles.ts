@@ -1,27 +1,44 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  padding: 2rem;
+export const Container = styled.section`
+  background: ${({ theme }) => theme.colors.background};
+  padding: ${({ theme }) => theme.spacing.xl} 0;
+  margin: ${({ theme }) => theme.spacing.xl} 0;
+`;
+
+export const Content = styled.div`
+  max-width: ${({ theme }) => theme.breakpoints.xl};
+  margin: 0 auto;
+  padding: 0 ${({ theme }) => theme.spacing.md};
+  text-align: center;
 `;
 
 export const Title = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 1.5rem;
+  font-size: 24px;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
-export const SearchInput = styled.input`
-  width: 100%;
-  padding: 1rem;
-  padding-left: 2.5rem;
-  border: 1px solid ${({ theme }) => theme.colors.gray.light};
-  border-radius: 4px;
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 1rem;
+export const Description = styled.p`
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.gray.dark};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  line-height: 1.5;
+`;
 
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.colors.secondary};
+export const HelpButton = styled.button`
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
+  border: none;
+  border-radius: 4px;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.secondary};
   }
 `;

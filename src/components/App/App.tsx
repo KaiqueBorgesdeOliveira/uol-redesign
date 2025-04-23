@@ -1,21 +1,9 @@
 import React from 'react';
-import Header from '../sections/Header/Header';
-import { HelpSection } from '../sections/HelpSection/HelpSection';
-import ServicesGrid from '../sections/ServicesGrid/ServiceGrid';
-import Footer from '../common/Footer';
+import { Header } from '../sections/Header';
+import { HelpSection } from '../sections/HelpSection';
+import { ServicesGrid } from '../sections/ServicesGrid';
+import { Footer } from '../common/Footer';
 import * as S from './App.styles';
-import styled from 'styled-components';
-
-const MainContainer = styled.main`
-  padding: 2rem;
-  max-width: ${({ theme }) => theme.breakpoints.desktop};
-  margin: 0 auto;
-  background: ${({ theme }) => theme.colors.background};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 1rem;
-  }
-`;
 
 const services = [
   {
@@ -49,10 +37,10 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      <MainContainer role="main">
+      <S.MainContainer role="main">
         <ServicesGrid services={services} />
         <HelpSection />
-      </MainContainer>
+      </S.MainContainer>
       <Footer />
     </>
   );

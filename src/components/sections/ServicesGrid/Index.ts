@@ -1,1 +1,1 @@
-export { default } from './ServiceGrid';
+export { ServicesGrid } from './ServicesGrid'; 
