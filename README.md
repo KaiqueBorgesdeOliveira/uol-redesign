@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# SAC-UOL Redesign
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Projeto de redesign da interface do SAC UOL desenvolvido com React 19 + TypeScript
 
-## Available Scripts
+## 🚀 Visão Geral
+  Repositório para o desafio técnico de frontend, implementando melhorias na interface do Sistema de Atendimento ao Cliente UOL com foco em:
+  - **Performance**: Otimização de carregamento
+  - **Acessibilidade**: WCAG 2.1 AA
+  - **UX Moderna**: Padrões de design atualizados
 
-In the project directory, you can run:
+## 📦 Tecnologias Principais
+  [![React](https://img.shields.io/badge/React-19.1.0-blue)](https://react.dev/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178C6)](https://www.typescriptlang.org/)
+  [![Styled Components](https://img.shields.io/badge/Styled_Components-6.1.17-DB7093)](https://styled-components.com/)
 
-### `npm start`
+## 🛠️ Configuração do Ambiente
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ### Pré-requisitos
+  - Node.js ≥ 18.x
+  - npm ≥ 9.x
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Instalação
+    ```bash
+    
+    git clone [https://github.com/KaiqueBorgesdeOliveira/UOL-SAC-Redesign]
+    cd uol-redesign
+    npm install
 
-### `npm test`
+## Comandos Úteis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Comando	Descrição
+   - npm start	Inicia servidor de desenvolvimento
+   - npm run build	Gera build para produção
+   - npm run type-check	Verifica tipos TypeScript
+   - npm run lint	Executa análise de código
+   - npm run format	Formata código automaticamente
 
-### `npm run build`
+## 🏗️ Estrutura do Projeto
+    ```plaintext
+    src/
+    ├── assets/            # Recursos estáticos (imagens, fonts)
+    ├── components/        # Componentes React
+    │   ├── sections/      # Seções da página (Header, Footer)
+    │   └── ui/            # Componentes UI (Button, Card)
+    ├── styles/            # Estilos globais e temas
+    │   ├── global.ts      # Configurações CSS globais
+    │   └── theme.ts       # Variáveis de design system
+    └── utils/             # Utilitários (formatters, helpers)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎨 Guia de Estilo
+  Cores Principais:
+  
+  #FF6600 (Laranja UOL)
+  
+  #333333 (Texto)
+  
+  #F5F5F5 (Fundo)
+  
+  Tipografia:
+  
+  'Segoe UI', sans-serif (Principal)
+  
+  14px base (Desktop)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📌 Roadmap de Melhorias
+  Implementar modo escuro
+  
+  Adicionar internacionalização (i18n)
+  
+  Integrar com API real do UOL
+  
+  Adicionar testes E2E
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🤝 Como Contribuir
+  Faça um fork do projeto
+  
+  Crie sua branch (git checkout -b feature/nova-feature)
+  
+  Commit suas mudanças (git commit -m 'Adiciona nova feature')
+  
+  Push para a branch (git push origin feature/nova-feature)
+  
+  Abra um Pull Request
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 Licença
+  Este projeto está sob a licença MIT - veja o arquivo LICENSE para detalhes.
+  
+  Nota: Este README será atualizado conforme o projeto evolui. Última atualização: {{16/04/2025}}
